@@ -6,7 +6,7 @@ variables:
   releaseBranchName: 'release'
 
 pool:
-  name: 'DESKTOP-BRUTAL'
+  name: DESKTOP-BRUTAL
   demands:
    - my-local-agent -equals 'BRUTAL'
 
@@ -78,6 +78,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
+      name: DESKTOP-BRUTAL
       vmImage: 'ubuntu-20.04'
       demands:
       - my-local-agent -equals 'BRUTAL'
@@ -104,6 +105,7 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
+      name: DESKTOP-BRUTAL
       vmImage: 'ubuntu-20.04'
       demands:
       - my-local-agent -equals 'BRUTAL'
