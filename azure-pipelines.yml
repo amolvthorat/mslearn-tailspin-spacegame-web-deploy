@@ -5,6 +5,11 @@ variables:
   buildConfiguration: 'Release'
   releaseBranchName: 'release'
 
+pool:
+  name: 'DESKTOP-BRUTAL'
+  demands:
+   - agent.name -equals 'BRUTAL-1'
+
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
@@ -15,7 +20,6 @@ stages:
       vmImage: 'ubuntu-20.04'
       demands:
       - npm
-      - agent.name -equals 'BRUTAL-1'
 
     variables:
       wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
