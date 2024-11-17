@@ -8,7 +8,7 @@ variables:
 pool:
   name: DESKTOP-BRUTAL
   demands:
-   - my-local-agent -equals BRUTAL
+   - Agent.Name -equals 'BRUTAL-1'
 
 stages:
 - stage: 'Build'
@@ -81,7 +81,7 @@ stages:
       name: DESKTOP-BRUTAL
       vmImage: 'ubuntu-20.04'
       demands:
-      - my-local-agent -equals BRUTAL
+      - Agent.Name -equals 'BRUTAL-1'
     environment: dev
     variables:
     - group: Release
@@ -108,7 +108,7 @@ stages:
       name: DESKTOP-BRUTAL
       vmImage: 'ubuntu-20.04'
       demands:
-      - my-local-agent -equals BRUTAL
+      - Agent.Name -equals 'BRUTAL-1'
     environment: staging
     variables:
     - group: 'Release'
