@@ -5,11 +5,6 @@ variables:
   buildConfiguration: 'Release'
   releaseBranchName: 'release'
 
-pool:
-  name: default
-  demands:
-   - Agent.Name -equals 'BRUTAL'
-
 stages:
 - stage: 'Build'
   displayName: 'Build the web application'
@@ -17,9 +12,11 @@ stages:
   - job: 'Build'
     displayName: 'Build job'
     pool:
+      name: 'Default' 
       vmImage: 'ubuntu-20.04'
       demands:
       - npm
+      - Agent.Name -equals 'BRUTAL'
 
     variables:
       wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
@@ -78,8 +75,8 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      name: default
-      vmImage: 'ubuntu-20.04'
+      name: Default
+      #vmImage: 'ubuntu-20.04'
       demands:
       - Agent.Name -equals 'BRUTAL'
     environment: dev
@@ -105,8 +102,8 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      name: default
-      vmImage: 'ubuntu-20.04'
+      name: Default
+      #vmImage: 'ubuntu-20.04'
       demands:
       - Agent.Name -equals 'BRUTAL'
     environment: staging
