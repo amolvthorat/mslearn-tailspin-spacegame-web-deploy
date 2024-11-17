@@ -13,7 +13,7 @@ stages:
     displayName: 'Build job'
     pool:
       name: 'Default' 
-      vmImage: 'ubuntu-20.04'
+      #vmImage: 'ubuntu-20.04'
       demands:
       - Agent.Name -equals BRUTAL
 
