@@ -15,7 +15,7 @@ stages:
       name: 'Default' 
       vmImage: 'ubuntu-20.04'
       demands:
-      - hook -equals 'desktop-agent'
+      - Agent.Name -equals BRUTAL
 
     variables:
       wwwrootDir: 'Tailspin.SpaceGame.Web/wwwroot'
@@ -77,7 +77,7 @@ stages:
       name: Default
       #vmImage: 'ubuntu-20.04'
       demands:
-      - hook -equals 'desktop-agent'
+      - Agent.Name -equals BRUTAL
     environment: dev
     variables:
     - group: Release
@@ -104,7 +104,7 @@ stages:
       name: Default
       #vmImage: 'ubuntu-20.04'
       demands:
-      - hook -equals 'desktop-agent'
+      - Agent.Name -equals BRUTAL
     environment: staging
     variables:
     - group: 'Release'
