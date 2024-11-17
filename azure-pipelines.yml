@@ -8,7 +8,7 @@ variables:
 pool:
   name: 'DESKTOP-BRUTAL'
   demands:
-   - agent.name -equals 'BRUTAL-1'
+   - my-local-agent -equals 'BRUTAL-1'
 
 stages:
 - stage: 'Build'
