@@ -6,9 +6,9 @@ variables:
   releaseBranchName: 'release'
 
 pool:
-  name: DESKTOP-BRUTAL
+  name: default
   demands:
-   - Agent.Name -equals 'BRUTAL-1'
+   - Agent.Name -equals 'BRUTAL'
 
 stages:
 - stage: 'Build'
@@ -78,10 +78,10 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      name: DESKTOP-BRUTAL
+      name: default
       vmImage: 'ubuntu-20.04'
       demands:
-      - Agent.Name -equals 'BRUTAL-1'
+      - Agent.Name -equals 'BRUTAL'
     environment: dev
     variables:
     - group: Release
@@ -105,10 +105,10 @@ stages:
   jobs:
   - deployment: Deploy
     pool:
-      name: DESKTOP-BRUTAL
+      name: default
       vmImage: 'ubuntu-20.04'
       demands:
-      - Agent.Name -equals 'BRUTAL-1'
+      - Agent.Name -equals 'BRUTAL'
     environment: staging
     variables:
     - group: 'Release'
